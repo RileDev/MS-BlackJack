@@ -1,0 +1,55 @@
+﻿<Window x:Class="BlackJack.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BlackJack"
+        mc:Ignorable="d"
+        Title="Black Jack Game" Height="600" Width="1200">
+    <Grid>
+        <!--Row Definitons-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <!--Header-->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Label x:Name="playerName" Content="Player" FontSize="25" Margin="0,20,0,10" Height="50"></Label>
+            <Label x:Name="playerScore" Content="00" FontSize="25" Margin="0 20 0 10" Height="50"></Label>
+            <Label Content=":" FontSize="25" Margin="0 20 0 10" Height="50"></Label>
+            <Label x:Name="botScore" Content="00" FontSize="25" Margin="0 20 0 10" Height="50"></Label>
+            <Label x:Name="botName" Content="Computer" FontSize="25" Margin="0,20,0,10" Height="50"></Label>
+        </StackPanel>
+        <!--Cards-->
+        <Grid Grid.Row="1" Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition Height="10*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="playerCombinations" Content="0" Height="50" FontSize="30" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0"></Label>
+            <Label x:Name="botCombinations" Content="0" Height="50" FontSize="30" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1"></Label>
+            <Border BorderThickness="2" BorderBrush="Black" Grid.Column="0" Grid.Row="1">
+                <WrapPanel Name="playerCards">
+                </WrapPanel>
+            </Border>
+            <Border BorderThickness="2" BorderBrush="Black" Grid.Column="1" Grid.Row="1">
+                <WrapPanel Name="botCards">
+                    
+                </WrapPanel>
+            </Border>
+            
+        </Grid>
+        <!--Buttons-->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button x:Name="btnHit" Content="Hit" Width="65" Height="40" Margin="10 0" Click="btnHit_Click"></Button>
+            <Button x:Name="btnStand" Content="Stand" Width="65" Height="40" Margin="10 0" Click="btnStand_Click"></Button>
+            <Button x:Name="btnDeal" Content="Deal" Width="65" Height="40" Margin="10 0" Click="btnDeal_Click"></Button>
+        </StackPanel>
+        
+    </Grid>
+</Window>
